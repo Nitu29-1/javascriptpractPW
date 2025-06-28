@@ -1,17 +1,19 @@
-function fetchpromise(){
-return new Promise((resolve) =>{
-setTimeout(()=> resolve("FUNCTION-02: End (promise)"), 3000)
-})
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`Waited ${ms}ms (promise)`);
+    }, ms);
+  });
 }
 
 console.log("FUNCTION-01: Start (sync)");
 
-async function showwithasyncwait()
+async function runwithasyncwait()
 {
-const name = await fetchpromise();
-console.log("waited for 3000ms");
-console.log(name)
+const waittime = await wait(6000);
+console.log(waittime);
+console.log("FUNCTION-02: End (async/await)")
 }
 console.log("FUNCTION-03: This runs immediately after async call");
 
-return showwithasyncwait();
+runwithasyncwait();
