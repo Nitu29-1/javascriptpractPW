@@ -16,10 +16,12 @@ function runApp() {
    loginUser()
       .then((loginMessage) => {
          console.log(loginMessage);
-         return fetchDashboard();
+         //return fetchDashboard();
       })
       .then((dashboard) => {
-         console.log(dashboard);
+        console.log(dashboard);
+        return fetchDashboard();
+         
       })
 }
 runApp();
