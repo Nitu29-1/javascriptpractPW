@@ -21,7 +21,7 @@ function runApp() {
       .then((dashboard) => {
         console.log(dashboard);
         return fetchDashboard();
-         
+        
       })
 }
 runApp();
